@@ -22,15 +22,15 @@ export default function App() {
 
         <Routes>
           <Route path='/' element={<MainPage />} />
-          
+
           <Route path='/recipes' element={<RecipesPage />} />
-          <Route path='/recipes/:id' element={<RecipePage />} />
+          <Route path='/recipe/:id' element={<RecipePage />} />
 
           <Route path='/photos' element={<PhotosPage />} />
-          <Route path='/photos/:id' element={<PhotoPage />} />
+          <Route path='/photo/:id' element={<PhotoPage />} />
 
           <Route path='/ingredients' element={<IngredientsPage />} />
-          <Route path='/ingredients/:id' element={<IngredientPage />} />
+          <Route path='/ingredient/:id' element={<IngredientPage />} />
 
           <Route path='/search' element={<SearchPage />} />
 
