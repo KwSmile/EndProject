@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import HeaderNav from "./AppParts/HeaderNav/HeaderNav";
+import MainPage from "./AppParts/MainPage/MainPage";
+import SearchPage from "./AppParts/SearchPage/SearchPage";
+import RecipesPage from "./AppParts/RecipesPage/RecipesPage";
+import RecipePage from "./AppParts/RecipesPage/RecipePage";
+import PhotosPage from "./AppParts/PhotosPage/PhotosPage";
+import PhotoPage from "./AppParts/PhotosPage/PhotoPage";
+import IngredientsPage from "./AppParts/IngredientsPage/IngredientsPage";
+import IngredientPage from "./AppParts/IngredientsPage/IngredientPage";
+import "./App.css"
 
-function App() {
+
+export default function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <>
+
+        <HeaderNav />
+
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          
+          <Route path='/recipes' element={<RecipesPage />} />
+          <Route path='/recipes/:id' element={<RecipePage />} />
+
+          <Route path='/photos' element={<PhotosPage />} />
+          <Route path='/photos/:id' element={<PhotoPage />} />
+
+          <Route path='/ingredients' element={<IngredientsPage />} />
+          <Route path='/ingredients/:id' element={<IngredientPage />} />
+
+          <Route path='/search' element={<SearchPage />} />
+
+          <Route path='*' element={<h1>404: Page not found</h1>} />
+        </Routes>
+
+      </>
+    </>
+  )
 }
 
-export default App;
