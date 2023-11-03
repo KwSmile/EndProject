@@ -13,6 +13,7 @@ import "./App.css"
 import RecipePhotoPage from "./AppParts/PhotosPage/RecipePhotoPage";
 import IngredientPhotoPage from "./AppParts/PhotosPage/IngredientPhotoPage";
 import MethodPhotoPage from "./AppParts/PhotosPage/MethodPhotoPage";
+import CreateRecipePage from "./AppParts/RecipesPage/CreateRecipePage";
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
 
         <Route path='/recipes' element={<RecipesPage />} />
         <Route path='/recipe/:id' element={<RecipePage />} />
+        <Route path='/recipe/create' element={<CreateRecipePage />} />
 
         <Route path='/photos' element={<PhotosPage />} />
         <Route path='/recipePhoto/:id' element={<RecipePhotoPage />} />
