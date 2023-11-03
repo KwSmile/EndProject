@@ -5,10 +5,14 @@ import SearchPage from "./AppParts/SearchPage/SearchPage";
 import RecipesPage from "./AppParts/RecipesPage/RecipesPage";
 import RecipePage from "./AppParts/RecipesPage/RecipePage";
 import PhotosPage from "./AppParts/PhotosPage/PhotosPage";
-import PhotoPage from "./AppParts/PhotosPage/PhotoPage";
 import IngredientsPage from "./AppParts/IngredientsPage/IngredientsPage";
 import IngredientPage from "./AppParts/IngredientsPage/IngredientPage";
+import MethodsPage from "./AppParts/MethodsPage/MethodsPage";
+import MethodPage from "./AppParts/MethodsPage/MethodPage";
 import "./App.css"
+import RecipePhotoPage from "./AppParts/PhotosPage/RecipePhotoPage";
+import IngredientPhotoPage from "./AppParts/PhotosPage/IngredientPhotoPage";
+import MethodPhotoPage from "./AppParts/PhotosPage/MethodPhotoPage";
 
 
 export default function App() {
@@ -16,28 +20,33 @@ export default function App() {
 
   return (
     <>
-      <>
 
-        <HeaderNav />
 
-        <Routes>
-          <Route path='/' element={<MainPage />} />
+      <HeaderNav />
 
-          <Route path='/recipes' element={<RecipesPage />} />
-          <Route path='/recipe/:id' element={<RecipePage />} />
+      <Routes>
+        <Route path='/' element={<MainPage />} />
 
-          <Route path='/photos' element={<PhotosPage />} />
-          <Route path='/photo/:id' element={<PhotoPage />} />
+        <Route path='/recipes' element={<RecipesPage />} />
+        <Route path='/recipe/:id' element={<RecipePage />} />
 
-          <Route path='/ingredients' element={<IngredientsPage />} />
-          <Route path='/ingredient/:id' element={<IngredientPage />} />
+        <Route path='/photos' element={<PhotosPage />} />
+        <Route path='/recipePhoto/:id' element={<RecipePhotoPage />} />
+        <Route path='/ingredientPhoto/:id' element={<IngredientPhotoPage />} />
+        <Route path='/methodPhoto/:id' element={<MethodPhotoPage />} />
 
-          <Route path='/search' element={<SearchPage />} />
+        <Route path='/ingredients' element={<IngredientsPage />} />
+        <Route path='/ingredient/:id' element={<IngredientPage />} />
 
-          <Route path='*' element={<h1>404: Page not found</h1>} />
-        </Routes>
+        <Route path='/methods' element={<MethodsPage />} />
+        <Route path='/method/:id' element={<MethodPage />} />
 
-      </>
+        <Route path='/search' element={<SearchPage />} />
+
+        <Route path='*' element={<h1>404: Page not found</h1>} />
+      </Routes>
+
+
     </>
   )
 }

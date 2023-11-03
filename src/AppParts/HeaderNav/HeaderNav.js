@@ -21,7 +21,10 @@ export default function HeaderNav() {
                     <NavLink to='/ingredients'>Ingredients</NavLink>
                 </li>
                 <li className='navLink'>
-                    <NavLink to='/photos'>Photos</NavLink>
+                    <NavLink to='/methods'>Methods</NavLink>
+                </li>
+                <li className='navLink'>
+                    <NavLink to='/photos'>Photo Gallery</NavLink>
                 </li>
                 <li className='navLink'>
                     <SearchForm />

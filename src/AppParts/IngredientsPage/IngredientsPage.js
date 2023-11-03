@@ -11,7 +11,6 @@ export default function IngredientsPage() {
         const getData = async () => {
             const { data } = await axios(API_URL + '/ingredients?_embed=ingredientPhotos')
             setData(data)
-
         }
 
         getData()

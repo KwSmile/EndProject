@@ -6,9 +6,9 @@ import { Link } from "react-router-dom"
 
 export default function PhotosPage() {
 
-    const [recipePhotos, setRecipePhotos] = useState([])
-    const [ingredientPhotos, setIngredientPhotos] = useState([])
-    const [methodPhotos, setMethodPhotos] = useState([])
+    const [recipePhotos, setRecipePhotos] = useState()
+    const [ingredientPhotos, setIngredientPhotos] = useState()
+    const [methodPhotos, setMethodPhotos] = useState()
 
 
     useEffect(() => {
@@ -31,39 +31,19 @@ export default function PhotosPage() {
 
 
     }, [])
-    // console.log(data)
 
-    const listElement = (
+    if (!recipePhotos || !ingredientPhotos || !methodPhotos) return
+
+    const recipeList = recipePhotos && (
         <>
             <h2>Recipes</h2>
             <ul>
-                {recipePhotos && recipePhotos.toReversed().map((obj) => (
+                {recipePhotos.toReversed().map((obj) => (
                     <li key={obj.id}>
-                        <Link to={`/recipe/${obj.recipeId}`}>
+                        <Link to={`/recipePhoto/${obj.id}`}>
                             <img src={obj.url} alt="recipe" />
                         </Link>
-                    </li>
-
-                ))}
-            </ul>
-            <h2>ingredients</h2>
-            <ul>
-                {ingredientPhotos && ingredientPhotos.toReversed().map((obj) => (
-                    <li key={obj.id}>
-                        <Link to={`/ingredient/${obj.ingredientId}`}>
-                            <img src={obj.url} alt="ingredient" />
-                        </Link>
-                    </li>
-
-                ))}
-            </ul>
-            <h2>Methods</h2>
-            <ul>
-                {methodPhotos && methodPhotos.toReversed().map((obj) => (
-                    <li key={obj.id}>
-                        <Link to={`/method/${obj.methodId}`}>
-                            <img src={obj.url} alt="method" />
-                        </Link>
+                        <Link to={`/recipe/${obj.recipeId}`}>View recipe</Link>
                     </li>
 
                 ))}
@@ -71,14 +51,50 @@ export default function PhotosPage() {
         </>
     )
 
+    const ingredientList = ingredientPhotos && (
+        <>
+            <h2>Ingredients</h2>
+            <ul>
+                {ingredientPhotos && ingredientPhotos.toReversed().map((obj) => (
+                    <li key={obj.id}>
+                        <Link to={`/ingredientPhoto/${obj.id}`}>
+                            <img src={obj.url} alt="ingredient" />
+
+                        </Link>
+                        <Link to={`/ingredient/${obj.ingredientId}`}>View ingredient</Link>
+                    </li>
+
+                ))}
+            </ul>
+        </>
+    )
+
+    const methodList = methodPhotos && (
+        <>
+            <h2>Methods</h2>
+            <ul>
+                {methodPhotos && methodPhotos.toReversed().map((obj) => (
+                    <li key={obj.id}>
+                        <Link to={`/methodPhoto/${obj.id}`}>
+                            <img src={obj.url} alt="method" />
+                        </Link>
+                        <Link to={`/method/${obj.methodId}`}>View method</Link>
+                    </li>
+
+                ))}
+            </ul>
+        </>
+    )
+
+
     return (
         <div>
 
             <h1>Photos</h1>
 
-            {listElement}
-
-
+            {recipeList}
+            {ingredientList}
+            {methodList}
 
         </div>
 
