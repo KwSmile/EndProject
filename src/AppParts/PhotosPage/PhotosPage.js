@@ -43,7 +43,7 @@ export default function PhotosPage() {
                         <Link to={`/recipePhoto/${obj.id}`}>
                             <img src={obj.url} alt="recipe" />
                         </Link>
-                        <Link to={`/recipe/${obj.recipeId}`}>View recipe</Link>
+                        <Link to={`/recipe/${obj.recipeId}`}>View Recipe</Link>
                     </li>
 
                 ))}
@@ -61,7 +61,7 @@ export default function PhotosPage() {
                             <img src={obj.url} alt="ingredient" />
 
                         </Link>
-                        <Link to={`/ingredient/${obj.ingredientId}`}>View ingredient</Link>
+                        <Link to={`/ingredient/${obj.ingredientId}`}>View Ingredient</Link>
                     </li>
 
                 ))}
@@ -78,7 +78,7 @@ export default function PhotosPage() {
                         <Link to={`/methodPhoto/${obj.id}`}>
                             <img src={obj.url} alt="method" />
                         </Link>
-                        <Link to={`/method/${obj.methodId}`}>View method</Link>
+                        <Link to={`/method/${obj.methodId}`}>View Method</Link>
                     </li>
 
                 ))}
