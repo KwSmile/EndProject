@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { API_URL } from "../../config"
 import axios from "axios"
 
@@ -97,7 +97,7 @@ export default function RecipePage() {
     ))
     const methodElement = methodList && (
         <>
-            <h3>Method</h3>
+            <h3>Methods</h3>
             <ul>
                 {methodList}
             </ul>
@@ -113,10 +113,13 @@ export default function RecipePage() {
                 {recipeElement}
 
                 {guidesElement}
+                <Link to={`/guide/create/${id}`}>Add Set Of Instructions</Link>
 
                 {ingredientsElement}
+                <Link to={`/ingredient/create/${id}`}>Add Ingredient</Link>
 
                 {methodElement}
+                <Link to={`/method/create/${id}`}>Add Method</Link>
 
             </div>
 

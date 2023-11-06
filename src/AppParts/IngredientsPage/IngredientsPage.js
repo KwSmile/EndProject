@@ -38,7 +38,6 @@ export default function IngredientsPage() {
         <div>
 
             <h2>Ingredients</h2>
-
             {listElement}
 
 

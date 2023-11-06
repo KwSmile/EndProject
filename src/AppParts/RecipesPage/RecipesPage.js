@@ -37,7 +37,7 @@ export default function RecipesPage() {
         <div>
 
             <h2>Recipes</h2>
-            {/* <Link to={`/recipe/create`}>Add Recipe</Link> */}
+            <Link to={`/recipe/create`}>Add Recipe</Link>
 
             {listElement}
 

@@ -9,11 +9,14 @@ import IngredientsPage from "./AppParts/IngredientsPage/IngredientsPage";
 import IngredientPage from "./AppParts/IngredientsPage/IngredientPage";
 import MethodsPage from "./AppParts/MethodsPage/MethodsPage";
 import MethodPage from "./AppParts/MethodsPage/MethodPage";
-import "./App.css"
 import RecipePhotoPage from "./AppParts/PhotosPage/RecipePhotoPage";
 import IngredientPhotoPage from "./AppParts/PhotosPage/IngredientPhotoPage";
 import MethodPhotoPage from "./AppParts/PhotosPage/MethodPhotoPage";
-import CreateRecipePage from "./AppParts/RecipesPage/CreateRecipePage";
+import CreateRecipePage from "./AppParts/CreatePages/CreateRecipePage";
+import CreateGuidePage from "./AppParts/CreatePages/CreateGuidePage";
+import "./App.css"
+import CreateIngredientPage from "./AppParts/CreatePages/CreateIngredientPage";
+import CreateMethodPage from "./AppParts/CreatePages/CreateMethodPage";
 
 
 export default function App() {
@@ -32,6 +35,9 @@ export default function App() {
         <Route path='/recipe/:id' element={<RecipePage />} />
         <Route path='/recipe/create' element={<CreateRecipePage />} />
 
+        <Route path='/guide/create/:id' element={<CreateGuidePage />} />
+
+
         <Route path='/photos' element={<PhotosPage />} />
         <Route path='/recipePhoto/:id' element={<RecipePhotoPage />} />
         <Route path='/ingredientPhoto/:id' element={<IngredientPhotoPage />} />
@@ -39,9 +45,11 @@ export default function App() {
 
         <Route path='/ingredients' element={<IngredientsPage />} />
         <Route path='/ingredient/:id' element={<IngredientPage />} />
+        <Route path='/ingredient/create/:id' element={<CreateIngredientPage />} />
 
         <Route path='/methods' element={<MethodsPage />} />
         <Route path='/method/:id' element={<MethodPage />} />
+        <Route path='/method/create/:id' element={<CreateMethodPage />} />
 
         <Route path='/search' element={<SearchPage />} />
 
