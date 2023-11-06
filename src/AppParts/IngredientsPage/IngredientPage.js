@@ -26,10 +26,15 @@ export default function IngredientPage() {
         <div>
             <h3>{data.name}</h3>
             <div>
-                {data.ingredientPhotos.map((item, i) => (
-                    <img key={i} src={item.url} alt="ingredient" />
+                {data.ingredientPhotos.map((obj, i) => (
+                    <div key={i}>
+                        <img src={obj.url} alt="ingredient" />
+                        <Link to={`/ingredientPhoto/delete/${obj.id}`}>Delete Photo</Link>
+                    </div>
                 ))}
+                <Link to={`/ingredientPhoto/create/${id}`}>Add Photo</Link>
             </div>
+            
             <p>{data.description}</p>
 
             <Link to={`/ingredient/edit/${data.id}`}>Edit Ingredient</Link>

@@ -58,8 +58,8 @@ export default function RecipePage() {
                     </li>
                 ))}
             </ul>
-            <Link to={`/guide/edit/${obj.id}`}>Edit Guide</Link>
-            <Link to={`/guide/delete/${obj.id}`}>Delete Guide</Link>
+            <Link to={`/guide/edit/${obj.id}`}>Edit Instructions</Link>
+            <Link to={`/guide/delete/${obj.id}`}>Delete Instructions</Link>
         </div>
     ))
 

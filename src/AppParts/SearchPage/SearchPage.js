@@ -1,105 +1,101 @@
 import { useEffect, useState } from "react"
 import { Link, useSearchParams } from "react-router-dom"
 import { API_URL } from "../../config"
+import axios from "axios"
 
 export default function SearchPage() {
     const [searchParams] = useSearchParams()
 
     const phrase = searchParams.get('search')
 
-    const [users, setUsers] = useState(null)
-    const [posts, setPosts] = useState(null)
-    const [albums, setAlbums] = useState(null)
+    const [recipes, setRecipes] = useState()
+    const [ingredients, setIngredients] = useState()
+    const [methods, setMethods] = useState()
 
     useEffect(() => {
-        const getUserData = async () => {
-            const res = await fetch(`${API_URL}/users?q=${phrase}`)
-            const apiData = await res.json()
-            setUsers(apiData)
+        const getRecipesData = async () => {
+            const { data } = await axios(`${API_URL}/recipes?q=${phrase}`)
+            setRecipes(data)
         }
-        const getPostsData = async () => {
-            const res = await fetch(`${API_URL}/posts?q=${phrase}`)
-            const apiData = await res.json()
-            setPosts(apiData)
+        const getIngredientsData = async () => {
+            const { data } = await axios(`${API_URL}/ingredients?q=${phrase}`)
+            setIngredients(data)
         }
-        const getAlbumsData = async () => {
-            const res = await fetch(`${API_URL}/albums?q=${phrase}`)
-            const apiData = await res.json()
-            setAlbums(apiData)
+        const getMethodsData = async () => {
+            const { data } = await axios(`${API_URL}/methods?q=${phrase}`)
+            setMethods(data)
         }
-
-        getUserData()
-        getPostsData()
-        getAlbumsData()
+        getRecipesData()
+        getIngredientsData()
+        getMethodsData()
 
     }, [phrase])
 
+    if (!recipes && !ingredients && !methods) {
+        return (
+            <h2>Loading...</h2>
+        )
+    }
 
-    const loadingElement = !users && !posts && !albums && (
-        <h2>Loading...</h2>
-        
-    )
+    if (recipes && ingredients && methods) {
+        if (phrase === '' || (recipes.length === 0 && ingredients.length === 0 && methods.length === 0)) {
+            return (
+                <h3>Search phrase is unqualified to peer into the data...</h3>
+            )
+        }
+    }
 
-    let dataCheck = users && posts && albums && true
-    let dataLengthCheck = dataCheck && users.length === 0 && posts.length === 0 && albums.length === 0 && true
-    let unqualifiedCheck = phrase === '' || (dataCheck && dataLengthCheck)
-    const unqualifiedElement = unqualifiedCheck && (
-        <h3>Search phrase is unqualified to peer into the data...</h3>
-    )
+    // phrase && recipes && ingredients && methods && console.log(recipes, ingredients, methods)
+    // console.log(phrase)
 
-    phrase && users && posts && albums && console.log(users, posts, albums)
-    console.log(phrase)
-
-    const usersListElement = users && users.map((obj) => (
+    const recipesListElement = recipes && recipes.length > 0 && recipes.map((obj) => (
         <li key={obj.id}>
-            <Link to={`/users/${obj.id}`}>
+            <Link to={`/recipe/${obj.id}`}>
+                {obj.name}
+            </Link>
+        </li>
+    ))
+    const recipesElement = recipesListElement && (
+        <>
+            <h3>Recipes</h3>
+            <ul>
+                {recipesListElement}
+            </ul>
+        </>
+    )
+
+    const ingredientsListElement = ingredients && ingredients.length > 0 && ingredients.map((obj) => (
+        <li key={obj.id}>
+            <Link to={`/ingredient/${obj.id}`}>
                 {obj.name}
 
             </Link>
 
         </li>
     ))
-    const usersElement = usersListElement && (
+    const ingredientsElement = ingredientsListElement && (
         <>
-            <h3>Users</h3>
+            <h3>Ingredients</h3>
             <ul>
-                {usersListElement}
+                {ingredientsListElement}
             </ul>
         </>
     )
 
-    const postsListElement = posts && posts.map((obj) => (
+    const methodsListElement = methods && methods.length > 0 && methods.map((obj) => (
         <li key={obj.id}>
-            <Link to={`/posts/${obj.id}`}>
-                {obj.title}
+            <Link to={`/method/${obj.id}`}>
+                {obj.name}
 
             </Link>
 
         </li>
     ))
-    const postsElement = postsListElement && (
+    const methodsElement = methodsListElement && (
         <>
-            <h3>Posts</h3>
+            <h3>Methods</h3>
             <ul>
-                {postsListElement}
-            </ul>
-        </>
-    )
-
-    const albumsListElement = albums && albums.map((obj) => (
-        <li key={obj.id}>
-            <Link to={`/albums/${obj.id}`}>
-                {obj.title}
-
-            </Link>
-
-        </li>
-    ))
-    const albumsElement = albumsListElement && (
-        <>
-            <h3>Albums</h3>
-            <ul>
-                {albumsListElement}
+                {methodsListElement}
             </ul>
         </>
     )
@@ -109,15 +105,14 @@ export default function SearchPage() {
 
     return (
         <div>
-            {loadingElement || unqualifiedElement || (
-                <>
-                    <h2>Search Results:</h2>
-                    {usersElement}
-                    {postsElement}
-                    {albumsElement}
 
-                </>
-            )}
+            <>
+                <h2>Search Results:</h2>
+                {recipesElement}
+                {ingredientsElement}
+                {methodsElement}
+
+            </>
 
 
 

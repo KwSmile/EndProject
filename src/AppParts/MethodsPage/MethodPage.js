@@ -26,9 +26,13 @@ export default function MethodPage() {
         <div>
             <h3>{data.name}</h3>
             <div>
-                {data.methodPhotos.map((item, i) => (
-                    <img key={i} src={item.url} alt="method" />
+                {data.methodPhotos.map((obj, i) => (
+                    <div key={i} >
+                        <img src={obj.url} alt="method" />
+                        <Link to={`/methodPhoto/delete/${obj.id}`}>Delete Photo</Link>
+                    </div>
                 ))}
+                <Link to={`/methodPhoto/create/${id}`}>Add Photo</Link>
             </div>
             <p>{data.description}</p>
 
