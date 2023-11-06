@@ -32,6 +32,10 @@ export default function IngredientPage() {
             </div>
             <p>{data.description}</p>
 
+            <Link to={`/ingredient/edit/${data.id}`}>Edit Ingredient</Link>
+            <Link to={`/ingredient/delete/${data.id}`}>Delete Ingredient</Link>
+
+
             <h4>Used in recipe:</h4>
             <Link to={`/recipe/${data.recipe.id}`}>{data.recipe.name}</Link>
 

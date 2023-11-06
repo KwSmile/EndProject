@@ -6,24 +6,14 @@
       "description": "spice, sauce and fertilize"
     },
     {
-      "name": "Chu",
-      "description": "Phoh",
-      "id": 2
-    },
-    {
-      "name": "Pero",
-      "description": "Gototo",
-      "id": 3
-    },
-    {
-      "name": "Goro",
-      "description": "Gorogoro",
-      "id": 4
-    },
-    {
-      "name": "1111",
-      "description": "22222",
+      "name": "1111 new",
+      "description": "2 was, now 22",
       "id": 5
+    },
+    {
+      "name": "name",
+      "description": "good name for a recipe",
+      "id": 6
     }
   ],
   "guides": [
@@ -33,22 +23,15 @@
       "instructions": [
         "dry",
         "grind",
-        "dry",
+        "dry harder",
         "boil",
-        "dry"
+        "dry HARD"
       ]
     },
     {
       "recipeId": "5",
       "instructions": [],
       "id": 2
-    },
-    {
-      "recipeId": 5,
-      "instructions": [
-        ""
-      ],
-      "id": 3
     },
     {
       "recipeId": 5,
@@ -60,18 +43,19 @@
       "id": 4
     },
     {
-      "recipeId": 5,
+      "recipeId": 6,
       "instructions": [
-        ""
+        "dig",
+        "dig deeper",
+        "burry THOT",
+        "Smile happily"
       ],
       "id": 5
     },
     {
-      "recipeId": 1,
+      "recipeId": 6,
       "instructions": [
-        "1",
-        "2",
-        "3"
+        "Walk away"
       ],
       "id": 6
     }
@@ -80,7 +64,7 @@
     {
       "id": 1,
       "recipeId": 1,
-      "name": "fish fin",
+      "name": "Fish Fin",
       "description": "bony and tasteless"
     },
     {
@@ -88,69 +72,40 @@
       "recipeId": 1,
       "name": "big skull",
       "description": "pretty big skull"
-    },
-    {
-      "id": 3,
-      "recipeId": 1,
-      "name": "pigeon spine",
-      "description": "very fragile"
-    },
-    {
-      "recipeId": 4,
-      "name": "nut",
-      "description": "black nut",
-      "id": 4
-    },
-    {
-      "recipeId": 4,
-      "name": "fFF",
-      "description": "FFf",
-      "id": 5
     }
   ],
   "methods": [
     {
       "id": 1,
       "recipeId": 1,
-      "name": "boiling",
+      "name": "Boiling",
       "description": "boiling in a pot of water"
-    },
-    {
-      "recipeId": 2,
-      "name": "Ripping",
-      "description": "With Jack",
-      "id": 2
     }
   ],
   "recipePhotos": [
     {
-      "id": 1,
       "recipeId": 1,
-      "url": "https://placehold.co/200x200"
+      "url": "https://placehold.co/200x200",
+      "id": 6
     }
   ],
   "ingredientPhotos": [
-    {
-      "id": 1,
-      "ingredientId": 1,
-      "url": "https://placehold.co/200x200"
-    },
     {
       "id": 2,
       "ingredientId": 2,
       "url": "https://placehold.co/200x200"
     },
     {
-      "id": 3,
-      "ingredientId": 3,
-      "url": "https://placehold.co/200x200"
+      "ingredientId": 1,
+      "url": "https://placehold.co/200x200",
+      "id": 6
     }
   ],
   "methodPhotos": [
     {
-      "id": 1,
       "methodId": 1,
-      "url": "https://placehold.co/200x200"
+      "url": "https://placehold.co/200x200",
+      "id": 3
     }
   ]
 }

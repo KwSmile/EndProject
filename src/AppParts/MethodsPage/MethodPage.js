@@ -11,7 +11,7 @@ export default function MethodPage() {
 
     useEffect(() => {
         async function getData() {
-            const {data} = await axios(`${API_URL}/methods/${id}?_embed=methodPhotos&_expand=recipe`)
+            const { data } = await axios(`${API_URL}/methods/${id}?_embed=methodPhotos&_expand=recipe`)
             setData(data)
         }
 
@@ -31,6 +31,9 @@ export default function MethodPage() {
                 ))}
             </div>
             <p>{data.description}</p>
+
+            <Link to={`/method/edit/${data.id}`}>Edit Method</Link>
+            <Link to={`/method/delete/${data.id}`}>Delete Method</Link>
 
             <h4>Used in recipe:</h4>
             <Link to={`/recipe/${data.recipe.id}`}>{data.recipe.name}</Link>

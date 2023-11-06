@@ -4,10 +4,10 @@ import { API_URL } from "../../config"
 import { useNavigate, useParams } from "react-router-dom"
 
 
-export default function EditRecipePage() {
+export default function EditMethodPage() {
     const { id } = useParams()
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const empty = ''
     const [name, setName] = useState(empty)
@@ -15,16 +15,17 @@ export default function EditRecipePage() {
 
     useEffect(() => {
         async function getData() {
-            const { data } = await axios(`${API_URL}/recipes/${id}`)
+            const { data } = await axios(`${API_URL}/methods/${id}`)
             setName(data.name)
             setDesc(data.description)
+            console.log(data)
         }
         getData()
     }, [id])
 
     const [validity, setValidity] = useState(true)
 
-    const onFormSubmit = (e) => {
+    const onFormSubmit = async (e) => {
         e.preventDefault()
 
         let valid = false
@@ -33,7 +34,7 @@ export default function EditRecipePage() {
         setValidity(valid)
         if (!valid) return
 
-        axios.patch(`${API_URL}/recipes/${id}`, {
+        const { data } = await axios.patch(`${API_URL}/methods/${id}`, {
             name: name,
             description: desc
         })
@@ -41,7 +42,7 @@ export default function EditRecipePage() {
         setName(empty)
         setDesc(empty)
 
-        navigate(`/recipe/${id}`)
+        navigate(`/recipe/${data.recipeId}`)
     }
 
     const nameError = !validity && name === empty && (
