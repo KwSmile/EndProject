@@ -31,7 +31,9 @@ export default function RecipePage() {
 
     }, [id])
 
-    if (!recipeData) return
+    if (!recipeData) {
+        return (<h3>Loading...</h3>)
+    }
 
     const recipeElement = (
         <>
@@ -49,7 +51,7 @@ export default function RecipePage() {
         </>
     )
 
-    const guidesList = recipeData.guides.length !== 0 && recipeData.guides.map((obj) => (
+    const guidesList = recipeData && recipeData.guides.map((obj) => (
         <div key={obj.id}>
             <ul>
                 {obj.instructions.map((item, i) => (

@@ -32,7 +32,9 @@ export default function PhotosPage() {
 
     }, [])
 
-    if (!recipePhotos || !ingredientPhotos || !methodPhotos) return
+    if (!recipePhotos || !ingredientPhotos || !methodPhotos) {
+        return (<h3>Loading...</h3>)
+    }
 
     const recipeList = recipePhotos && (
         <>

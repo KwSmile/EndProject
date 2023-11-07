@@ -20,7 +20,9 @@ export default function RecipePhotoPage() {
 
     }, [id])
 
-    if (!data) return
+    if (!data) {
+        return (<h3>Loading...</h3>)
+    }
 
     return (
         <div>

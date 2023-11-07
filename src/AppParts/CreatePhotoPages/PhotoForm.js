@@ -1,13 +1,5 @@
-import axios from "axios"
-import { useState } from "react"
-import { API_URL } from "../../config"
-import { useNavigate, useParams } from "react-router-dom"
 
-
-export default function CreateRecipePhotoPage({onFormSubmit, validity}) {
-
-    const empty = ''
-    const [url, setUrl] = useState(empty)
+export default function PhotoForm({onFormSubmit, validity, url, setUrl, empty}) {
     
     const urlError = !validity && url === empty && (
         <div className="formError">Fill in url!</div>

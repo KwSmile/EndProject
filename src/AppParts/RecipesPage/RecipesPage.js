@@ -15,7 +15,10 @@ export default function RecipesPage() {
         getData()
 
     }, [])
-    console.log(data)
+
+    if (!data) {
+        return (<h3>Loading...</h3>)
+    }
 
     const listElement = (
         <ul>
