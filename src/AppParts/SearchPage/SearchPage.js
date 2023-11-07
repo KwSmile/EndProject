@@ -102,11 +102,8 @@ export default function SearchPage() {
         </>
     )
 
-
-
-
     return (
-        <div>
+        <div className="margin">
 
             <h2 className={style.title}>Search Results:</h2>
             {recipesElement}
