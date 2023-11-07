@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { API_URL } from "../../config"
 import { useNavigate, useParams } from "react-router-dom"
 import EditListForm from "./EditListForm"
+import "../generalStyle.scss"
 
 
 export default function EditGuidePage() {
@@ -47,6 +48,7 @@ export default function EditGuidePage() {
 
     return (
         <>
+            <h2 className="margin">Edit Instructions</h2>
             <EditListForm
                 validity={validity}
                 onFormSubmit={onFormSubmit}

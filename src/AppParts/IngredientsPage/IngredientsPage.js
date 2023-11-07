@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { API_URL } from "../../config"
 import axios from "axios"
 import { Link } from "react-router-dom"
+import "../generalStyle.scss"
+
 
 export default function IngredientsPage() {
 
@@ -22,23 +24,23 @@ export default function IngredientsPage() {
     }
 
     const listElement = (
-        <ul>
+        <div className="listContainer">
             {data && data.toReversed().map((obj) => (
-                <li key={obj.id}>
+                <div className="listCard" key={obj.id}>
                     <Link to={`/ingredient/${obj.id}`}>
-                        <h3>{obj.name}</h3>
+                        <h3 className="marginNone">{obj.name}</h3>
                         {obj.ingredientPhotos.length && <img src={obj.ingredientPhotos[0].url} alt="ingredient" />}
 
                     </Link>
 
-                </li>
+                </div>
 
             ))}
-        </ul>
+        </div>
     )
 
     return (
-        <div>
+        <div className="margin">
 
             <h2>Ingredients</h2>
             {listElement}

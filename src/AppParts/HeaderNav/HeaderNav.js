@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom'
 import './HeaderNav.css'
 import SearchForm from './SearchForm'
+import "../generalStyle.scss"
+
 
 export default function HeaderNav() {
 
@@ -9,7 +11,6 @@ export default function HeaderNav() {
 
     return (
         <header>
-            <div>Recipes</div>
             <ul className='navContainer'>
                 <li className='navLink'>
                     <NavLink to='/'>Home</NavLink>

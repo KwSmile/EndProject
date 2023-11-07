@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { API_URL } from "../../config"
 import axios from "axios"
+import "../generalStyle.scss"
+
 
 export default function IngredientPhotoPage() {
     const { id } = useParams()
@@ -26,7 +28,7 @@ export default function IngredientPhotoPage() {
 
     return (
         <div>
-            <img src={data} alt="ingredient" />
+            <img className="maxSize" src={data} alt="ingredient" />
         </div>
     )
 }

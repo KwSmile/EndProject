@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { API_URL } from "../../config"
 import axios from "axios"
+import "../generalStyle.scss"
+
 
 export default function IngredientPage() {
     const { id } = useParams()
@@ -27,32 +29,32 @@ export default function IngredientPage() {
     const element = (
         <div>
             <h3>{data.name}</h3>
-            <div>
+            <div className="listContainer">
                 {data.ingredientPhotos.map((obj, i) => (
-                    <div key={i}>
+                    <div className="listCard" key={i}>
                         <img src={obj.url} alt="ingredient" />
-                        <Link to={`/ingredientPhoto/delete/${obj.id}`}>Delete Photo</Link>
+                        <Link className="linkButton" to={`/ingredientPhoto/delete/${obj.id}`}>Delete Photo</Link>
                     </div>
                 ))}
-                <Link to={`/ingredientPhoto/create/${id}`}>Add Photo</Link>
+                <Link className="linkButton" to={`/ingredientPhoto/create/${id}`}>Add Photo</Link>
             </div>
             
             <p>{data.description}</p>
 
-            <Link to={`/ingredient/edit/${data.id}`}>Edit Ingredient</Link>
-            <Link to={`/ingredient/delete/${data.id}`}>Delete Ingredient</Link>
+            <Link className="linkButton" to={`/ingredient/edit/${data.id}`}>Edit Ingredient</Link>
+            <Link className="linkButton" to={`/ingredient/delete/${data.id}`}>Delete Ingredient</Link>
 
 
             <h4>Used in recipe:</h4>
-            <Link to={`/recipe/${data.recipe.id}`}>{data.recipe.name}</Link>
+            <Link className="linkButton" to={`/recipe/${data.recipe.id}`}>{data.recipe.name}</Link>
 
         </div>
     )
 
     return (
-        <>
+        <div className="margin">
             <h2>Ingredient</h2>
             {element}
-        </>
+        </div>
     )
 }

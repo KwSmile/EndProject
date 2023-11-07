@@ -1,3 +1,4 @@
+import "../generalStyle.scss"
 
 export default function EditListForm({ validity, onFormSubmit, instructions, setInstructions }) {
     const instructionsError = !validity && (
@@ -10,7 +11,7 @@ export default function EditListForm({ validity, onFormSubmit, instructions, set
 
     return (
         <>
-            <form onSubmit={onFormSubmit}>
+            <form className="formGeneral" onSubmit={onFormSubmit}>
                 <div className="formControl">
 
                     <label htmlFor="instructions">Instructions:</label>

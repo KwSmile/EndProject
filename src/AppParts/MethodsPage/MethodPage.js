@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { API_URL } from "../../config"
 import axios from "axios"
+import "../generalStyle.scss"
+
 
 export default function MethodPage() {
     const { id } = useParams()
@@ -27,30 +29,30 @@ export default function MethodPage() {
     const element = (
         <div>
             <h3>{data.name}</h3>
-            <div>
+            <div className="listContainer">
                 {data.methodPhotos.map((obj, i) => (
-                    <div key={i} >
+                    <div className="listCard" key={i} >
                         <img src={obj.url} alt="method" />
-                        <Link to={`/methodPhoto/delete/${obj.id}`}>Delete Photo</Link>
+                        <Link className="linkButton" to={`/methodPhoto/delete/${obj.id}`}>Delete Photo</Link>
                     </div>
                 ))}
-                <Link to={`/methodPhoto/create/${id}`}>Add Photo</Link>
+                <Link className="linkButton" to={`/methodPhoto/create/${id}`}>Add Photo</Link>
             </div>
             <p>{data.description}</p>
 
-            <Link to={`/method/edit/${data.id}`}>Edit Method</Link>
-            <Link to={`/method/delete/${data.id}`}>Delete Method</Link>
+            <Link className="linkButton" to={`/method/edit/${data.id}`}>Edit Method</Link>
+            <Link className="linkButton" to={`/method/delete/${data.id}`}>Delete Method</Link>
 
             <h4>Used in recipe:</h4>
-            <Link to={`/recipe/${data.recipe.id}`}>{data.recipe.name}</Link>
+            <Link className="linkButton" to={`/recipe/${data.recipe.id}`}>{data.recipe.name}</Link>
 
         </div>
     )
 
     return (
-        <>
+        <div className="margin">
             <h2>Method</h2>
             {element}
-        </>
+        </div>
     )
 }

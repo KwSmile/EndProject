@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Link, useSearchParams } from "react-router-dom"
 import { API_URL } from "../../config"
 import axios from "axios"
+import style from "../generalStyle.module.scss"
+
 
 export default function SearchPage() {
     const [searchParams] = useSearchParams()
@@ -33,14 +35,14 @@ export default function SearchPage() {
 
     if (!recipes && !ingredients && !methods) {
         return (
-            <h2>Loading...</h2>
+            <h2 className={style.title}>Loading...</h2>
         )
     }
 
     if (recipes && ingredients && methods) {
         if (phrase === '' || (recipes.length === 0 && ingredients.length === 0 && methods.length === 0)) {
             return (
-                <h3>Search phrase is unqualified to peer into the data...</h3>
+                <h3 className={style.title}>Search phrase is unqualified to peer into the data...</h3>
             )
         }
     }
@@ -49,7 +51,7 @@ export default function SearchPage() {
     // console.log(phrase)
 
     const recipesListElement = recipes && recipes.length > 0 && recipes.map((obj) => (
-        <li key={obj.id}>
+        <li key={obj.id} >
             <Link to={`/recipe/${obj.id}`}>
                 {obj.name}
             </Link>
@@ -57,7 +59,7 @@ export default function SearchPage() {
     ))
     const recipesElement = recipesListElement && (
         <>
-            <h3>Recipes</h3>
+            <h3 className={style.title}>Recipes</h3>
             <ul>
                 {recipesListElement}
             </ul>
@@ -75,7 +77,7 @@ export default function SearchPage() {
     ))
     const ingredientsElement = ingredientsListElement && (
         <>
-            <h3>Ingredients</h3>
+            <h3 className={style.title}>Ingredients</h3>
             <ul>
                 {ingredientsListElement}
             </ul>
@@ -93,7 +95,7 @@ export default function SearchPage() {
     ))
     const methodsElement = methodsListElement && (
         <>
-            <h3>Methods</h3>
+            <h3 className={style.title}>Methods</h3>
             <ul>
                 {methodsListElement}
             </ul>
@@ -106,15 +108,10 @@ export default function SearchPage() {
     return (
         <div>
 
-            <>
-                <h2>Search Results:</h2>
-                {recipesElement}
-                {ingredientsElement}
-                {methodsElement}
-
-            </>
-
-
+            <h2 className={style.title}>Search Results:</h2>
+            {recipesElement}
+            {ingredientsElement}
+            {methodsElement}
 
         </div>
     )

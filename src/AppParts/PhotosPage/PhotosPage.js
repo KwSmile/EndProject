@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { API_URL } from "../../config"
 import axios from "axios"
 import { Link } from "react-router-dom"
+import "../generalStyle.scss"
+
 
 
 export default function PhotosPage() {
@@ -39,60 +41,60 @@ export default function PhotosPage() {
     const recipeList = recipePhotos && (
         <>
             <h2>Recipes</h2>
-            <ul>
+            <div className="listContainer">
                 {recipePhotos.toReversed().map((obj) => (
-                    <li key={obj.id}>
+                    <div className="listCard" key={obj.id}>
                         <Link to={`/recipePhoto/${obj.id}`}>
                             <img src={obj.url} alt="recipe" />
                         </Link>
-                        <Link to={`/recipe/${obj.recipeId}`}>View Recipe</Link>
-                    </li>
+                        <Link className="linkButton" to={`/recipe/${obj.recipeId}`}>View Recipe</Link>
+                    </div>
 
                 ))}
-            </ul>
+            </div>
         </>
     )
 
     const ingredientList = ingredientPhotos && (
         <>
             <h2>Ingredients</h2>
-            <ul>
+            <div className="listContainer">
                 {ingredientPhotos && ingredientPhotos.toReversed().map((obj) => (
-                    <li key={obj.id}>
+                    <div className="listCard" key={obj.id}>
                         <Link to={`/ingredientPhoto/${obj.id}`}>
                             <img src={obj.url} alt="ingredient" />
 
                         </Link>
-                        <Link to={`/ingredient/${obj.ingredientId}`}>View Ingredient</Link>
-                    </li>
+                        <Link className="linkButton" to={`/ingredient/${obj.ingredientId}`}>View Ingredient</Link>
+                    </div>
 
                 ))}
-            </ul>
+            </div>
         </>
     )
 
     const methodList = methodPhotos && (
         <>
             <h2>Methods</h2>
-            <ul>
+            <div className="listContainer">
                 {methodPhotos && methodPhotos.toReversed().map((obj) => (
-                    <li key={obj.id}>
+                    <div className="listCard" key={obj.id}>
                         <Link to={`/methodPhoto/${obj.id}`}>
                             <img src={obj.url} alt="method" />
                         </Link>
-                        <Link to={`/method/${obj.methodId}`}>View Method</Link>
-                    </li>
+                        <Link className="linkButton" to={`/method/${obj.methodId}`}>View Method</Link>
+                    </div>
 
                 ))}
-            </ul>
+            </div>
         </>
     )
 
 
     return (
-        <div>
+        <div className="margin">
 
-            <h1>Photos</h1>
+            <h1>Photo Gallery</h1>
 
             {recipeList}
             {ingredientList}

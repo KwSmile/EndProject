@@ -3,7 +3,7 @@ import { useState } from "react"
 import { API_URL } from "../../config"
 import { useNavigate } from "react-router-dom"
 import CreateForm from "./CreateForm";
-
+import "../generalStyle.scss"
 
 export default function CreateRecipePage() {
 
@@ -37,6 +37,7 @@ export default function CreateRecipePage() {
 
     return (
         <>
+        <h2 className="margin">Create Recipe</h2>
             <CreateForm
                 validity={validity}
                 name={name}

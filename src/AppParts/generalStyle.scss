@@ -1,0 +1,150 @@
+:root {
+    --titleColor: rgb(99, 48, 48);
+    --textColor: rgb(136, 71, 71);
+    --borderColor: rgb(223, 177, 177);
+    --bgColor: rgb(238, 222, 222);
+    --bodyColor: rgb(255, 252, 252);
+}
+
+body {
+    background-color: var(--bodyColor);
+}
+
+h1 {
+    color: var(--titleColor);
+}
+h2 {
+    color: var(--titleColor);
+}
+h3 {
+    color: var(--titleColor);
+}
+h4 {
+    color: var(--titleColor);
+}
+h5 {
+    color: var(--titleColor);
+}
+
+a {
+    color: var(--textColor);
+}
+
+p {
+    color: var(--textColor);
+}
+
+div {
+    color: var(--textColor);
+}
+
+span {
+    color: var(--textColor);
+}
+
+button {
+    border-color: var(--borderColor);
+    color: var(--textColor);
+    background-color: var(--bgColor);
+    font-size: 15px;
+}
+
+input {
+    border-color: var(--borderColor);
+    color: var(--textColor);
+    background-color: var(--bgColor);
+    font-size: 15px;
+}
+textarea {
+    border-color: var(--borderColor);
+    color: var(--textColor);
+    background-color: var(--bgColor);
+    font-size: 15px;
+    width: 98%;
+    height: 100px;
+}
+
+.formGeneral {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(121, 54, 54, 0.1);
+    padding: 1em;
+    width: 60%;
+}
+
+.formControl {
+    display: flex;
+    flex-direction: column;
+    // margin: 1em;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(121, 54, 54, 0.1);
+    padding: 1em;
+    width: 93%;
+}
+
+.formError {
+    color: rgb(221, 44, 44);
+}
+
+.listContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    // list-style: none;
+    // padding: 10px;
+}
+
+.listCard {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(121, 54, 54, 0.1);
+    padding: 10px;
+}
+
+.margin {
+    margin: 20px;
+}
+
+.paddingNone {
+    padding: 0px;
+}
+.marginNone {
+    margin: 0px;
+}
+
+.linkButton {
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+    height: 1.3rem;
+    // width: 10rem;
+    border-radius: 5px;
+    border-color: rgba(121, 54, 54, 0.1);
+    list-style: none;
+    text-decoration: none;
+
+    &:hover {
+        background-color: var(--bgColor);
+    }
+}
+
+.maxSize {
+    width: 100%;
+}
+
+.deleteButton {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-width: 5px;
+    &:hover{
+        background-color: rgb(221, 185, 185);
+    }
+}

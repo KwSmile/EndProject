@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { API_URL } from "../../config"
 import axios from "axios"
+import "../generalStyle.scss"
+
 
 export default function MethodPhotoPage() {
     const { id } = useParams()
@@ -26,7 +28,7 @@ export default function MethodPhotoPage() {
 
     return (
         <div>
-            <img src={data} alt="method" />
+            <img className="maxSize" src={data} alt="method" />
 
         </div>
     )

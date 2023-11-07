@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { API_URL } from "../../config"
 import { useNavigate, useParams } from "react-router-dom"
+import "../generalStyle.scss"
 
 
 export default function DeleteMethodPage() {
@@ -28,7 +29,7 @@ export default function DeleteMethodPage() {
 
     return (
         <>
-            {data && <button onClick={onButtonClick}>{`Delete method ${data.name}`}</button>}
+            {data && <button className="deleteButton" onClick={onButtonClick}>{`Delete method ${data.name}`}</button>}
         </>
     )
 

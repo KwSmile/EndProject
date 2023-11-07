@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { API_URL } from "../../config"
 import { useNavigate, useParams } from "react-router-dom"
+import "../generalStyle.scss"
 
 
 export default function DeleteRecipePage() {
@@ -29,7 +30,7 @@ export default function DeleteRecipePage() {
 
     return (
         <>
-            {name && <button onClick={onButtonClick}>{`Delete ${name} recipe?`}</button>}
+            {name && <button className="deleteButton" onClick={onButtonClick}>{`Delete ${name} recipe?`}</button>}
 
         </>
     )

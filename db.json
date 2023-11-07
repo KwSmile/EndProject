@@ -16,8 +16,8 @@
       "id": 6
     },
     {
-      "name": "ne wR",
-      "description": "nre R desc",
+      "name": "Red Recipe of lupapa",
+      "description": "red eyes bringin tefaryr",
       "id": 7
     }
   ],
@@ -63,6 +63,17 @@
         "Walk away"
       ],
       "id": 6
+    },
+    {
+      "recipeId": 7,
+      "instructions": [
+        "go",
+        "ko",
+        "bgbgg",
+        "ghrtt",
+        "e876i6i"
+      ],
+      "id": 7
     }
   ],
   "ingredients": [
@@ -77,6 +88,12 @@
       "recipeId": 1,
       "name": "big skull",
       "description": "pretty big skull"
+    },
+    {
+      "recipeId": 7,
+      "name": "Good ingreident",
+      "description": "Ijijiji",
+      "id": 3
     }
   ],
   "methods": [
@@ -85,6 +102,18 @@
       "recipeId": 1,
       "name": "Boiling",
       "description": "boiling in a pot of water"
+    },
+    {
+      "recipeId": 7,
+      "name": "BBQ",
+      "description": "cook on fire",
+      "id": 2
+    },
+    {
+      "recipeId": 7,
+      "name": "BBQ with coal",
+      "description": "same thing as BBQ just with coal",
+      "id": 3
     }
   ],
   "recipePhotos": [
@@ -97,6 +126,36 @@
       "recipeId": 1,
       "url": "https://placehold.co/200x200",
       "id": 7
+    },
+    {
+      "recipeId": 7,
+      "url": "https://placehold.co/200x200",
+      "id": 8
+    },
+    {
+      "recipeId": 6,
+      "url": "https://placehold.co/200x200",
+      "id": 9
+    },
+    {
+      "recipeId": 5,
+      "url": "https://placehold.co/200x200",
+      "id": 10
+    },
+    {
+      "recipeId": 1,
+      "url": "https://placehold.co/200x200",
+      "id": 11
+    },
+    {
+      "recipeId": 1,
+      "url": "https://placehold.co/200x200",
+      "id": 12
+    },
+    {
+      "recipeId": 7,
+      "url": "https://placehold.co/200x200",
+      "id": 13
     }
   ],
   "ingredientPhotos": [
@@ -114,6 +173,46 @@
       "ingredientId": 2,
       "url": "https://placehold.co/200x200",
       "id": 5
+    },
+    {
+      "ingredientId": 7,
+      "url": "https://placehold.co/200x200",
+      "id": 6
+    },
+    {
+      "ingredientId": 7,
+      "url": "https://placehold.co/200x200",
+      "id": 7
+    },
+    {
+      "ingredientId": 7,
+      "url": "https://placehold.co/200x200",
+      "id": 8
+    },
+    {
+      "ingredientId": 7,
+      "url": "https://placehold.co/200x200",
+      "id": 9
+    },
+    {
+      "ingredientId": 3,
+      "url": "https://placehold.co/200x200",
+      "id": 10
+    },
+    {
+      "ingredientId": 7,
+      "url": "https://placehold.co/200x200",
+      "id": 11
+    },
+    {
+      "ingredientId": 3,
+      "url": "https://placehold.co/200x200",
+      "id": 12
+    },
+    {
+      "ingredientId": 3,
+      "url": "https://placehold.co/200x200",
+      "id": 13
     }
   ],
   "methodPhotos": [
@@ -121,6 +220,36 @@
       "methodId": 1,
       "url": "https://placehold.co/200x200",
       "id": 3
+    },
+    {
+      "methodId": 2,
+      "url": "https://placehold.co/200x200",
+      "id": 4
+    },
+    {
+      "methodId": 7,
+      "url": "https://placehold.co/200x200",
+      "id": 5
+    },
+    {
+      "methodId": 2,
+      "url": "https://placehold.co/200x200",
+      "id": 6
+    },
+    {
+      "methodId": 2,
+      "url": "https://placehold.co/200x200",
+      "id": 7
+    },
+    {
+      "methodId": 3,
+      "url": "https://placehold.co/200x200",
+      "id": 8
+    },
+    {
+      "methodId": 3,
+      "url": "https://placehold.co/200x200",
+      "id": 9
     }
   ]
 }

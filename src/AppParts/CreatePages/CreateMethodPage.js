@@ -3,7 +3,7 @@ import { useState } from "react"
 import { API_URL } from "../../config"
 import { useNavigate, useParams } from "react-router-dom"
 import CreateForm from "./CreateForm"
-
+import "../generalStyle.scss"
 
 export default function CreateMethodPage() {
     const { id } = useParams()
@@ -39,6 +39,7 @@ export default function CreateMethodPage() {
 
     return (
         <>
+        <h2 className="margin">Create Method</h2>
             <CreateForm
                 validity={validity}
                 name={name}

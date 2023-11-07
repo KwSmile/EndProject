@@ -1,3 +1,4 @@
+import "../generalStyle.scss"
 
 export default function CreateForm({ validity, name, setName, desc, setDesc, empty, onFormSubmit }) {
 
@@ -14,7 +15,7 @@ export default function CreateForm({ validity, name, setName, desc, setDesc, emp
 
     return (
         <>
-            <form onSubmit={onFormSubmit}>
+            <form className="formGeneral" onSubmit={onFormSubmit}>
                 <div className="formControl">
 
                     <label htmlFor="name">Name:</label>

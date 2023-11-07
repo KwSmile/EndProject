@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { API_URL } from "../../config"
 import { useNavigate, useParams } from "react-router-dom"
+import "../generalStyle.scss"
 
 
 export default function DeleteIngredientPhotoPage() {
@@ -28,7 +29,7 @@ export default function DeleteIngredientPhotoPage() {
 
     return (
         <>
-            {data && <button onClick={onButtonClick}>{`Delete photo`}</button>}
+            {data && <button className="deleteButton" onClick={onButtonClick}>{`Delete photo`}</button>}
         </>
     )
 

@@ -1,3 +1,4 @@
+import "../generalStyle.scss"
 
 export default function EditForm({ validity, name, setName, desc, setDesc, empty, onFormSubmit }) {
     const nameError = !validity && name === empty && (
@@ -13,7 +14,7 @@ export default function EditForm({ validity, name, setName, desc, setDesc, empty
 
     return (
         <>
-            <form onSubmit={onFormSubmit}>
+            <form className="formGeneral" onSubmit={onFormSubmit}>
                 <div className="formControl">
 
                     <label htmlFor="name">Name:</label>

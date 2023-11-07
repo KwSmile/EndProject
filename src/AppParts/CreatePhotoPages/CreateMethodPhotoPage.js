@@ -3,7 +3,7 @@ import { useState } from "react"
 import { API_URL } from "../../config"
 import { useNavigate, useParams } from "react-router-dom"
 import PhotoForm from "./PhotoForm"
-
+import "../generalStyle.scss"
 
 export default function CreateMethodPhotoPage() {
     const { id } = useParams()
@@ -36,6 +36,7 @@ export default function CreateMethodPhotoPage() {
 
     return (
         <>
+        <h2 className="margin">Create Method Photo</h2>
             <PhotoForm
                 onFormSubmit={onFormSubmit}
                 validity={validity}

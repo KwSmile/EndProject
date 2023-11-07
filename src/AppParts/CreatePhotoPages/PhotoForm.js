@@ -1,3 +1,4 @@
+import "../generalStyle.scss"
 
 export default function PhotoForm({onFormSubmit, validity, url, setUrl, empty}) {
     
@@ -11,7 +12,7 @@ export default function PhotoForm({onFormSubmit, validity, url, setUrl, empty}) 
 
     return (
         <>
-            <form onSubmit={onFormSubmit}>
+            <form className="formGeneral" onSubmit={onFormSubmit}>
                 <div className="formControl">
 
                     <label htmlFor="url">Photo Url:</label>

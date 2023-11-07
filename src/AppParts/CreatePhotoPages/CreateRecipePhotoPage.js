@@ -3,7 +3,7 @@ import { useState } from "react"
 import { API_URL } from "../../config"
 import { useNavigate, useParams } from "react-router-dom"
 import PhotoForm from "./PhotoForm"
-
+import "../generalStyle.scss"
 
 export default function CreateRecipePhotoPage() {
     const { id } = useParams()
@@ -37,6 +37,7 @@ export default function CreateRecipePhotoPage() {
 
     return (
         <>
+        <h2 className="margin">Create Recipe Photo</h2>
             <PhotoForm
                 onFormSubmit={onFormSubmit}
                 validity={validity}

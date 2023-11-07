@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { API_URL } from "../../config"
 import { useNavigate, useParams } from "react-router-dom"
 import EditForm from "./EditForm"
+import "../generalStyle.scss"
 
 
 export default function EditMethodPage() {
@@ -48,6 +49,7 @@ export default function EditMethodPage() {
 
     return (
         <>
+            <h2 className="margin">Edit Method</h2>
             <EditForm
                 validity={validity}
                 name={name}

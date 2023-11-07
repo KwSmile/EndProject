@@ -15,13 +15,13 @@
 
 .navLink a{
     text-decoration: none;
-    color: black;
+    color: rgb(247, 243, 243);
     font-weight: bold;
 }
 
 
 .navLink .active {
-    color: rgb(247, 243, 243);
+    color: rgb(65, 28, 28);
 }
 
 

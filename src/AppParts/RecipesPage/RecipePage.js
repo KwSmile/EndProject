@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { API_URL } from "../../config"
 import axios from "axios"
+import "../generalStyle.scss"
+
 
 export default function RecipePage() {
     const { id } = useParams()
@@ -38,14 +40,14 @@ export default function RecipePage() {
     const recipeElement = (
         <>
             <h3>{recipeData.name}</h3>
-            <div>
+            <div className="listContainer">
                 {recipeData.recipePhotos.map((obj, i) => (
-                    <div key={i}>
+                    <div className="listCard" key={i}>
                         <img src={obj.url} alt="recipe" />
-                        <Link to={`/recipePhoto/delete/${obj.id}`}>Delete Photo</Link>
+                        <Link className="linkButton" to={`/recipePhoto/delete/${obj.id}`}>Delete Photo</Link>
                     </div>
                 ))}
-                <Link to={`/recipePhoto/create/${id}`}>Add Photo</Link>
+                <Link className="linkButton" to={`/recipePhoto/create/${id}`}>Add Photo</Link>
             </div>
             <p>{recipeData.description}</p>
         </>
@@ -53,15 +55,15 @@ export default function RecipePage() {
 
     const guidesList = recipeData && recipeData.guides.map((obj) => (
         <div key={obj.id}>
-            <ul>
+            <ul className="listContainer paddingNone">
                 {obj.instructions.map((item, i) => (
-                    <li key={i}>
-                        {item}
+                    <li className="listCard none" key={i}>
+                        <span>{i + 1} - {item}</span>
                     </li>
                 ))}
             </ul>
-            <Link to={`/guide/edit/${obj.id}`}>Edit Instructions</Link>
-            <Link to={`/guide/delete/${obj.id}`}>Delete Instructions</Link>
+            <Link className="linkButton" to={`/guide/edit/${obj.id}`}>Edit Instructions</Link>
+            <Link className="linkButton" to={`/guide/delete/${obj.id}`}>Delete Instructions</Link>
         </div>
     ))
 
@@ -74,77 +76,77 @@ export default function RecipePage() {
         </>
     )
     const ingredientsList = ingredientData && ingredientData.map((obj) => (
-        <li key={obj.id}>
+        <div key={obj.id}>
             <h4>{obj.name}</h4>
-            <div>
+            <div className="listContainer">
                 {obj.ingredientPhotos.map((obj, i) => (
-                    <div key={i}>
+                    <div className="listCard" key={i}>
                         <img src={obj.url} alt="ingredient" />
-                        <Link to={`/ingredientPhoto/delete/${obj.id}`}>Delete Photo</Link>
+                        <Link className="linkButton" to={`/ingredientPhoto/delete/${obj.id}`}>Delete Photo</Link>
                     </div>
                 ))}
-                <Link to={`/ingredientPhoto/create/${id}`}>Add Photo</Link>
+                <Link className="linkButton" to={`/ingredientPhoto/create/${obj.id}`}>Add Photo</Link>
             </div>
             <p>{obj.description}</p>
 
-            <Link to={`/ingredient/edit/${obj.id}`}>Edit Ingredient</Link>
-            <Link to={`/ingredient/delete/${obj.id}`}>Delete Ingredient</Link>
-        </li>
+            <Link className="linkButton" to={`/ingredient/edit/${obj.id}`}>Edit Ingredient</Link>
+            <Link className="linkButton" to={`/ingredient/delete/${obj.id}`}>Delete Ingredient</Link>
+        </div>
     ))
     const ingredientsElement = ingredientsList && (
         <>
             <h3>Ingredients</h3>
-            <ul>
+            <div>
                 {ingredientsList}
-            </ul>
+            </div>
         </>
     )
 
     const methodList = methodData && methodData.map((obj) => (
-        <li key={obj.id}>
+        <div key={obj.id}>
             <h4>{obj.name}</h4>
-            <div>
+            <div className="listContainer">
                 {obj.methodPhotos.map((obj, i) => (
-                    <div key={i} >
+                    <div className="listCard" key={i} >
                         <img src={obj.url} alt="method" />
-                        <Link to={`/methodPhoto/delete/${obj.id}`}>Delete Photo</Link>
+                        <Link className="linkButton" to={`/methodPhoto/delete/${obj.id}`}>Delete Photo</Link>
                     </div>
                 ))}
-                <Link to={`/methodPhoto/create/${id}`}>Add Photo</Link>
+                <Link className="linkButton" to={`/methodPhoto/create/${obj.id}`}>Add Photo</Link>
             </div>
             <p>{obj.description}</p>
 
-            <Link to={`/method/edit/${obj.id}`}>Edit Method</Link>
-            <Link to={`/method/delete/${obj.id}`}>Delete Method</Link>
-        </li>
+            <Link className="linkButton" to={`/method/edit/${obj.id}`}>Edit Method</Link>
+            <Link className="linkButton" to={`/method/delete/${obj.id}`}>Delete Method</Link>
+        </div>
     ))
     const methodElement = methodList && (
         <>
             <h3>Methods</h3>
-            <ul>
+            <div>
                 {methodList}
-            </ul>
+            </div>
         </>
     )
 
     return (
         <>
-            <h2>Recipe</h2>
+            <h2 className="margin">Recipe</h2>
 
-            <div>
+            <div className="margin">
 
                 {recipeElement}
-                <Link to={`/recipe/edit/${id}`}>Edit Recipe</Link>
-                <Link to={`/recipe/delete/${id}`}>Delete Recipe</Link>
+                <Link className="linkButton" to={`/recipe/edit/${id}`}>Edit Recipe</Link>
+                <Link className="linkButton" to={`/recipe/delete/${id}`}>Delete Recipe</Link>
 
                 {guidesElement}
-                <Link to={`/guide/create/${id}`}>Add Instructions</Link>
+                <Link className="linkButton" to={`/guide/create/${id}`}>Add Instructions</Link>
 
                 {ingredientsElement}
-                <Link to={`/ingredient/create/${id}`}>Add Ingredient</Link>
+                <Link className="linkButton" to={`/ingredient/create/${id}`}>Add Ingredient</Link>
 
                 {methodElement}
-                <Link to={`/method/create/${id}`}>Add Method</Link>
+                <Link className="linkButton" to={`/method/create/${id}`}>Add Method</Link>
 
             </div>
 
