@@ -68,12 +68,17 @@
       "recipeId": 7,
       "instructions": [
         "go",
-        "ko",
-        "bgbgg",
-        "ghrtt",
-        "e876i6i"
+        "ko"
       ],
       "id": 7
+    },
+    {
+      "recipeId": 7,
+      "instructions": [
+        "50",
+        "51"
+      ],
+      "id": 8
     }
   ],
   "ingredients": [

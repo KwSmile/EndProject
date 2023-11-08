@@ -1,64 +1,62 @@
-:root {
-    --titleColor: rgb(99, 48, 48);
-    --textColor: rgb(136, 71, 71);
-    --borderColor: rgb(223, 177, 177);
-    --bgColor: rgb(238, 222, 222);
-    --bodyColor: rgb(255, 252, 252);
-}
+$titleColor: rgb(99, 48, 48);
+$textColor: rgb(136, 71, 71);
+$borderColor: rgb(223, 177, 177);
+$bgColor: rgb(238, 222, 222);
+$bodyColor: rgb(255, 252, 252);
 
 body {
-    background-color: var(--bodyColor);
+    background-color: $bodyColor;
 }
 
 h1 {
-    color: var(--titleColor);
+    color: $titleColor;
 }
 h2 {
-    color: var(--titleColor);
+    color: $titleColor;
 }
 h3 {
-    color: var(--titleColor);
+    color: $titleColor;
 }
 h4 {
-    color: var(--titleColor);
+    color: $titleColor;
 }
 h5 {
-    color: var(--titleColor);
+    color: $titleColor;
 }
 
 a {
-    color: var(--textColor);
+    color: $textColor;
 }
 
 p {
-    color: var(--textColor);
+    color: $textColor;
 }
 
 div {
-    color: var(--textColor);
+    color: $textColor;
 }
 
 span {
-    color: var(--textColor);
+    color: $textColor;
 }
 
 button {
-    border-color: var(--borderColor);
-    color: var(--textColor);
-    background-color: var(--bgColor);
+    border-color: $borderColor;
+    color: $textColor;
+    background-color: $bgColor;
     font-size: 15px;
 }
 
 input {
-    border-color: var(--borderColor);
-    color: var(--textColor);
-    background-color: var(--bgColor);
+    border-color: $borderColor;
+    color: $textColor;
+    background-color: $bgColor;
     font-size: 15px;
 }
 textarea {
-    border-color: var(--borderColor);
-    color: var(--textColor);
-    background-color: var(--bgColor);
+    border-color: $borderColor;
+    color: $textColor;
+    background-color: $bgColor;
     font-size: 15px;
     width: 98%;
     height: 100px;
@@ -131,7 +129,7 @@ textarea {
     text-decoration: none;
 
     &:hover {
-        background-color: var(--bgColor);
+        background-color: $bgColor;
     }
 }
 
@@ -144,7 +142,42 @@ textarea {
     padding: 10px 20px;
     font-size: 20px;
     border-width: 5px;
-    &:hover{
+    &:hover {
         background-color: rgb(221, 185, 185);
     }
 }
+
+/* [<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-= */
+/* Spin */
+/* [<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-= */
+
+.spin {
+    pointer-events: none;
+
+    &.text {
+        color: black;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .spin {
+        animation: spin-spin infinite 13s linear;
+    }
+}
+
+@keyframes spin-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* [<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-= */
+/* Dark Mode */
+/* [<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-= */
+// * {
+//     filter: brightness(90%);
+    
+// }

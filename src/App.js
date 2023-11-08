@@ -32,12 +32,14 @@ import DeleteMethodPhotoPage from "./AppParts/DeletePhotoPages/DeleteMethodPhoto
 import { Route, Routes } from "react-router-dom";
 import { DarkModeContext } from "./context";
 import { useState } from "react";
+import Darkmode from 'darkmode-js';
 import "./App.css"
-
 
 export default function App() {
 
   const [darkMode, setDarkMode] = useState(false)
+
+  new Darkmode().showWidget();
 
   return (
     <>
