@@ -5,14 +5,15 @@ import { Link } from "react-router-dom"
 import "../generalStyle.scss"
 
 
-export default function IngredientsPage() {
+export default function MethodsPage() {
 
-    const [data, setData] = useState(null)
+    const [data, setData] = useState()
 
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(API_URL + '/ingredients?_embed=ingredientPhotos')
+            const { data } = await axios(API_URL + '/methods?_embed=methodPhotos')
             setData(data)
+
         }
 
         getData()
@@ -27,9 +28,9 @@ export default function IngredientsPage() {
         <div className="listContainer">
             {data && data.toReversed().map((obj) => (
                 <div className="listCard" key={obj.id}>
-                    <Link to={`/ingredient/${obj.id}`}>
+                    <Link to={`/method/${obj.id}`}>
                         <h3 className="marginNone">{obj.name}</h3>
-                        {obj.ingredientPhotos.length && <img src={obj.ingredientPhotos[0].url} alt="ingredient" />}
+                        {obj.methodPhotos.length && <img src={obj.methodPhotos[0].url} alt="method" />}
 
                     </Link>
 
@@ -42,10 +43,9 @@ export default function IngredientsPage() {
     return (
         <div className="margin">
 
-            <h2>Ingredients</h2>
+            <h2>Methods</h2>
+
             {listElement}
-
-
 
         </div>
 

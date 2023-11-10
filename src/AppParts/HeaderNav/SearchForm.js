@@ -1,4 +1,6 @@
 import { useState } from "react"
+import "../generalStyle.scss"
+
 
 export default function SearchForm() {
 

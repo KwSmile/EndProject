@@ -1,0 +1,56 @@
+$xl: 87.5em; // 4k and hi-res desktop
+$lg: 60em; // 1080 and hi-res laptops
+$med: 40em; // hi-res tablets and low-res laptops
+$sm: 28em; // mobile and low-res tablets
+$xs: 20em; // mobile only
+
+.navContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    list-style: none;
+
+    background-color: rgb(194, 156, 156);
+
+    margin: auto;
+    padding: 10px;
+}
+
+.navLink a {
+    text-decoration: none;
+    color: rgb(247, 243, 243);
+    font-weight: bold;
+
+    &.active {
+        color: rgb(65, 28, 28);
+    }
+}
+
+@media screen and (max-width: $xl) {
+    .navLink {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: $lg) {
+    .navLink {
+        font-size: 19px;
+    }
+}
+@media screen and (max-width: $med) {
+    .navLink {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: $sm) {
+    .navLink {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: $xs) {
+    .navLink {
+        font-size: 28px;
+    }
+}

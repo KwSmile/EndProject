@@ -1,0 +1,188 @@
+$titleColor: rgb(99, 48, 48);
+$textColor: rgb(136, 71, 71);
+$borderColor: rgb(223, 177, 177);
+$bgColor: rgb(238, 222, 222);
+$bodyColor: rgb(255, 252, 252);
+
+body {
+    background-color: $bodyColor;
+}
+
+h1 {
+    color: $titleColor;
+}
+h2 {
+    color: $titleColor;
+}
+h3 {
+    color: $titleColor;
+}
+h4 {
+    color: $titleColor;
+}
+h5 {
+    color: $titleColor;
+}
+
+a {
+    color: $textColor;
+}
+
+p {
+    color: $textColor;
+}
+
+div {
+    color: $textColor;
+}
+
+span {
+    color: $textColor;
+}
+
+button {
+    border-color: $borderColor;
+    color: $textColor;
+    background-color: $bgColor;
+    font-size: 15px;
+}
+
+input {
+    border-color: $borderColor;
+    color: $textColor;
+    background-color: $bgColor;
+    font-size: 15px;
+}
+textarea {
+    border-color: $borderColor;
+    color: $textColor;
+    background-color: $bgColor;
+    font-size: 15px;
+    width: 98%;
+    height: 100px;
+}
+
+img {
+    height: 200px;
+}
+
+.formGeneral {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(121, 54, 54, 0.1);
+    padding: 1em;
+    width: 60%;
+}
+
+.formControl {
+    display: flex;
+    flex-direction: column;
+    // margin: 1em;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(121, 54, 54, 0.1);
+    padding: 1em;
+    width: 93%;
+}
+
+.formError {
+    color: rgb(221, 44, 44);
+}
+
+.listContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    // list-style: none;
+    // padding: 10px;
+}
+
+.listCard {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(121, 54, 54, 0.1);
+    padding: 10px;
+}
+
+.margin {
+    margin: 20px;
+}
+
+.paddingNone {
+    padding: 0px;
+}
+.marginNone {
+    margin: 0px;
+}
+
+.linkButton {
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+    height: 1.3rem;
+    // width: 10rem;
+    border-radius: 5px;
+    border-color: rgba(121, 54, 54, 0.1);
+    list-style: none;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $bgColor;
+    }
+}
+
+.maxSize {
+    width: 100%;
+    height: 100%;
+}
+
+.deleteButton {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-width: 5px;
+    &:hover {
+        background-color: rgb(221, 185, 185);
+    }
+}
+
+/* [<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-= */
+/* Spin */
+/* [<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-= */
+
+.spin {
+    pointer-events: none;
+
+    &.text {
+        color: black;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .spin {
+        animation: spin-spin infinite 13s linear;
+    }
+}
+
+@keyframes spin-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* [<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-= */
+/* Dark Mode */
+/* [<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-=-=-=-=-=-=-=-=-=-=>][<=-=-= */
+// * {
+//     filter: brightness(90%);
+    
+// }
